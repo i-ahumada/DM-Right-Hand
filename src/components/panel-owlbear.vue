@@ -7,7 +7,7 @@
     <h3>Owlbear</h3>
     <iframe id="inlineFrameExample" class="w-100"
     title="Inline Frame Example"
-    height="400"
+    height="350"
     :src="owlbearURL">
     </iframe>
     <div>

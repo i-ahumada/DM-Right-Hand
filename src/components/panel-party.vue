@@ -7,8 +7,6 @@
     let players = ref([]);
     const emit = defineEmits(['response'])
 
-
-
     function addPlayer() {
         players.value.push({
             id: id++,
@@ -16,7 +14,7 @@
             race: playerRace,
             stats: playerStats
         })
-        emit('response', playerName);
+        emit('response', players);
         playerName = '';
         playerRace = '';
         playerStats = [8,8,8,8,8,8];
@@ -26,6 +24,10 @@
         players.value = players.value.filter((p) => p.id !== player.id);
         emit('response', players.value);
     }
+
+    defineExpose({
+        players
+    })
 </script>
 
 <template>

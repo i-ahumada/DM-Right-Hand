@@ -1,8 +1,5 @@
 <script setup>
     import { ref } from 'vue';
-    defineProps({
-        players: Array,
-    })
     let id = 0;
     let npcName = ref('');
     let npcRace = ref('');
@@ -18,7 +15,7 @@
         })
         npcName = '';
         npcRace = '';
-        npcStats = [8,8,8,8,8,8];
+        npcStats = [8,8,8,8,8,8]; 
     }
 
     function deleteNpc(npc) {

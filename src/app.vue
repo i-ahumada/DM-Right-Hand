@@ -6,37 +6,41 @@
     import party from './components/panel-party.vue'
     import { ref } from 'vue'
 
-    let player = ref('');
+    let players = ref([{
+        id: 0,
+        pname: 'hola'
+    }])
 </script>
 
 <template>
 <div class="container-fluid">
     <div class="row my-2">
-    <div class="col-3">
+    <div class="col-md-3 col-6">
         <div class="container panel h-100">
-            <party @response="(playerName) => player = playerName"></party>
+            <party @response="(playersArray) => players = playersArray"/>
         </div>
     </div>
-    <div class="col-6">
+    <div class="col-md-3 col-6">
+        <div class="container panel h-100">
+            <npc/>
+        </div>
+    </div>
+    <div class="col-md-6 col-12 my-2">
         <div class="container panel">
-            <owlbear></owlbear>
+            <owlbear/>
         </div>
     </div>
-    <div class="col-3 ">
-        <div class="container panel h-100">
-            <npc></npc>
-        </div>
-    </div>
+
 </div>
 <div class="row">
     <div class="col-6" >
         <div class="container panel bottom-panel">
-            <notes></notes>
+            <notes/>
         </div>
     </div>
     <div class="col-6 ">
         <div class="container panel bottom-panel">
-            <initiative :players="player"></initiative>
+            <initiative :players="players"/>
         </div>
     </div>
 </div>
